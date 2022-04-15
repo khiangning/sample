@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS初體驗 上色囉～</title>
+    <style type="text/css">
+      
+      body {
+        background-color: darkkhaki; /*酪梨色*/
+      }
+/* 以下是網路字體 */
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexkai.css);
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+      h1 {
+        color: lemonchiffon;
+        text-align: center;
+        font-family: cwTeXKai, serif;
+      }
+
+      h2 {
+        color: slateblue;
+        text-align: center;
+        font-family: ‘cwTeXKai’, serif;
+      }
+
+      p {
+        color:  black;
+        font-family: "cwTeXFangSong", "courier", serif;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      section ul {
+        text-align: left;
+        width: 40%;
+        position:relative;
+        left: 30%;
+/* 我在猜這樣就是置中的意思？但這樣才能讓點點成直線 first we make text-align: left -----> text can be beside dotted bullet
+then we make width: 40% -------> ul now has 40% width from its container(ex:div)
+then we make position: relative —> to can move ul to any position relative to its current position
+then we make left: 30% —> move ul to left 30% from current position,
+to move it to center of container,why this number?
+first ul has width= 40% so remaining 100-40=60
+now to make it center divide number 60/2=30
+all width= 30% left, 40% ul , 30% remaining … now this position is in center*/
+      }
+
+      header li {
+        list-style: none;
+        text-align: left;
+        width: 40%;
+        position: relative;
+        left: 25%;
+      }
+
+      header li:nth-child(3) {
+        font-size: 40px; /*這裡應該要第三個變大，但因為我已經指定好20px了，所以這個額外的指令沒有用*/
+      }
+
+      header a:link, a:visited { /*a:link表示還沒按之前，visited按之後*/;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: Copperplate;
+        background-color: beige;
+        border-radius: 30px;
+        color: goldenrod;
+        display: block;
+        text-align: center;
+        margin-bottom: 5px;
+        padding: 10px; /*上下寬度？*/
+      }
+
+      header a:hover, a:active {
+        background-color: rosybrown;
+        color: sienna;
+      }
+
+
+      .p1 {
+        color: tomato;
+      }
+
+      .p2 {
+        font-family: "Lucida Console", "Courier New", monospace;
+      }
+
+      .p3 {
+        font-family: Monaco;
+      } 
+
+      .p4 {
+        font-family: Copperplate;
+      }
+
+      .p5 {
+        font-family: ‘cwTeXFangSong’, serif;
+      }
+
+      div {
+        background-color: rgba(102,205,170, 0.6); /* mediumaquamarine  #66cdaa 好像要這樣的語法，才可以「只改」背景透明度（要不然會整個div都改） */
+      }
+
+      #d1 {
+        color: palevioletred;
+        background-color: pink;
+      }
+
+      #d2 {
+        color: orangered;
+        background-color: lightgoldenrodyellow;
+      }
+
+/* 只有在section (direct) 裡面的h2會變成tomato色 同一個裡面的div裡面的h2不會變色 */
+      section > h2 {
+        color: mediumvioletred  ;
+      }
+/* section裡面不管是不是親生的，有li就變色 */
+      section li {
+        color: darkslateblue;
+      }
+
+      p.big {
+        font-size: 20px;
+      }
+
+
+    </style>
+  </head>
+ 
+  <body>
+    <h1>New Class GOGOGO 中文有改字體嗎</h1>
+<header>
+<ul>
+  <li><a href="https://www.instagram.com/keep_moviening_ning/">Movie Account</a></li>
+  <li><a href="https://www.instagram.com/addiction_chiao/">Addiction Account</a></li>
+  <li><a href="https://www.w3schools.com/howto/howto_css_topnav_centered.asp">Nothing</a></li>
+</ul>
+</header>
+
+<section>
+    <p>English is better with different fonts<br> 計畫學這個幹嘛？做自己的profile網頁XD</p>
+    <p class="big">這排會變大字，且套用原本p的樣式，寫做p.big</p>
+    <div><p>This part color is different due to "div" 全部的DIV都會是綠色，但如果特定指定別的#d1, #d2 (#name) 的話，那個段落就會被指定成別的狀態</p></div>
+
+    <p>family-name - The name of a font-family, like "times", "courier", "arial", etc.</p>
+    <p class="p1">This line will be in color tomato.</p>
+    <p class="p2">"Lucida Console", "Courier New", monospace</p>
+    <p class="p3">Monaco</p>
+    <p>也可以把兩個以上的「群」設成同一個，不用再重複語法：假設h1和p都用一樣的：
+      <br> h1, p {color: XXX; font-family: XXX}</p>
+</section>
+ 
+<section>
+  <div id=d1>
+    <p class="p4">Copperplate</p>
+    <p class="p5">cwTeXFangSong 仿宋體字體</p>
+    <p><a href="https://make9.tw/wordpress/teaching/%E5%81%9A%E5%87%BA%E9%AB%98%E8%B3%AA%E6%84%9F%E7%B6%B2%E7%AB%99%EF%BC%8C%E5%BF%85%E9%A0%88%E7%9F%A5%E9%81%93%E7%9A%84%E7%B6%B2%E9%A0%81%E5%AD%97%E9%AB%94%E6%87%89%E7%94%A8/">做出高質感網站，必須知道的網頁字體應用</a></p>
+    <p>font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif; 通常設定網頁字體時，會將「英文字體」在最前面順位、接著是 MAC 字體、Windows 字體，原因是中文字體通常「包含」英文字體，因此假如你將中文字體放在順位前面，找到中文字體後，瀏覽器就不會再往下找其他指定字體了，這是設定時的一個小訣竅。</p>
+  </div>
+</section>
+
+<section>
+  <h2>不包在裡面的標題（這個是direct在section裡的h2）</h2>
+  <div>
+    <h2>這個不會變顏色且包在DIV裡面：只有在section (direct) 裡面的h2會變成tomato色，同一個裡面的div裡面的h2不會變色</h2>
+    <p><span id=d2>這在幹嘛，為什麼字體又沒變了：要加p才會是整體的啦～變成highlight了</span><br>前者變成DIV包住P裡面的SPAN. 然而這句話沒有改變因為他是p裡面的<br>所以前面的span可以當highlight之類的（span包在div裡面，可以不換行）<span id=d2>像這樣</span></p>
+  </div>
+</section>
+
+<section>
+  <h2>section裡面不管是不是親生的，有li就變色</h2>
+  <ul>
+    <li>你好</li>
+    <li>我好</li>
+    <li>大家好</li>
+  </ul>
+</section>
+
+
+    
+  </body>
+  </html>
